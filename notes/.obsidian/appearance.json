@@ -1,0 +1,11 @@
+{
+  "theme": "moonstone",
+  "cssTheme": "Oat Latte",
+  "baseFontSize": 17,
+  "textFontFamily": "Libre Baskerville,Georgia",
+  "monospaceFontFamily": "Cascadia Code",
+  "enabledCssSnippets": [
+    "vault"
+  ],
+  "showRibbon": true
+}

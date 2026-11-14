@@ -1,0 +1,11 @@
+# build
+*.o
+/renderer
+
+# editor
+*.swp
+.DS_Store
+
+# Obsidian (estado local da janela)
+notes/.obsidian/workspace*.json
+notes/.obsidian/cache

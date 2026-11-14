@@ -1,0 +1,11 @@
+{
+  "readableLineLength": true,
+  "showLineNumber": true,
+  "livePreview": true,
+  "showFrontmatter": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00 Inbox",
+  "attachmentFolderPath": "_assets",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": false
+}

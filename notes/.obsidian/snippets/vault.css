@@ -1,0 +1,126 @@
+/* ===== Vault 3D from scratch — ajustes sobre o Oat Latte ===== */
+
+/* Fundo bege (o Oat Latte padrão é quase branco) + largura da nota */
+body.theme-light {
+  --background-primary: #ede1cb;
+  --background-primary-alt: #e6d8bf;
+  --background-secondary: #e4d5bb;
+  --background-secondary-alt: #e3d6bf;
+  --background-modifier-border: #d6c7ae;
+  --code-background: #2b211c;
+  --text-normal: #3f2e25;
+  --text-accent: #a0522d;
+  --link-color: #a0522d;
+  --file-line-width: 800px;
+}
+body { --file-line-width: 800px; --font-text-size: 16.5px; }
+
+/* Fonte das anotações (sobrescreve o Cormorant do tema) */
+body.theme-light .markdown-source-view,
+body.theme-light .markdown-preview-view,
+body .markdown-rendered {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 16.5px;
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+body h1, body h2, body h3, body h4,
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  color: #6b4a36;
+}
+
+/* Fonte dos códigos */
+code, pre, .cm-inline-code, .HyperMD-codeblock, .markdown-rendered code {
+  font-family: "Cascadia Code", Menlo, monospace !important;
+  font-size: 14.5px;
+  font-variant-ligatures: contextual;
+}
+
+/* Sem linhas de caderno e sem o fundo quase branco do tema */
+body .cm-editor,
+body .markdown-preview-view,
+body .markdown-reading-view,
+body .markdown-source-view,
+body .view-content,
+body .workspace-leaf-content {
+  background-color: var(--background-primary) !important;
+  background-image: none !important;
+}
+/* o tema força Cascadia no modo leitura: volta para serifada */
+body .markdown-reading-view,
+body .markdown-preview-view {
+  font-family: "Libre Baskerville", Georgia, serif !important;
+}
+
+/* ===== Widgets interativos (dataviewjs → _widgets/*.js) ===== */
+.w3d {
+  background: #faf5ec;
+  border: 1px solid #d6c7ae;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 12px 0;
+  color: #3f2e25;
+  font-family: "Cascadia Code", Menlo, monospace;
+  font-size: 13px;
+}
+.w3d canvas { display: block; width: 100%; height: auto; margin: 0 auto; touch-action: none; border-radius: 6px; }
+.w3d-controls { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; align-items: center; }
+.w3d-row { display: flex; align-items: center; gap: 8px; min-width: 210px; }
+.w3d-row > span:first-child { min-width: 54px; color: #8b6f5a; }
+.w3d-row input[type=range] { flex: 1; accent-color: #a0522d; }
+.w3d-val { min-width: 44px; text-align: right; }
+.w3d button, .w3d select {
+  font-family: inherit; font-size: 12px; padding: 3px 10px; cursor: pointer;
+  background: #efe5d4; color: #3f2e25; border: 1px solid #cdbb9d; border-radius: 6px; box-shadow: none;
+}
+.w3d button:hover { background: #e5d6bd; }
+.w3d button.on { background: #a0522d; color: #faf5ec; border-color: #a0522d; }
+.w3d label { display: inline-flex; gap: 4px; align-items: center; cursor: pointer; }
+.w3d-info { margin-top: 8px; white-space: pre-wrap; line-height: 1.55; background: #ede1cb; padding: 8px 10px; border-radius: 6px; }
+.w3d-hint { color: #8b6f5a; font-size: 12px; margin-bottom: 6px; }
+/* esconde o "Evaluation Error" vazio do bloco dataviewjs */
+.block-language-dataviewjs:has(.w3d) { padding: 0; }
+
+/* ===== Blocos de código escuros (caixa "espresso") ===== */
+body {
+  --code-background: #2b211c;
+  --code-normal: #eadbc8;
+  --code-comment: #8f7c69;
+  --code-keyword: #e0a96d;
+  --code-function: #8fb8d6;
+  --code-string: #a9c47f;
+  --code-value: #d98a6c;
+  --code-property: #d9c08a;
+  --code-tag: #e0a96d;
+  --code-operator: #cfb9a3;
+  --code-punctuation: #b09c88;
+  --code-important: #e07a5f;
+}
+/* modo leitura */
+.markdown-rendered pre {
+  background-color: #2b211c !important;
+  border: 1px solid #1d1612;
+  border-radius: 8px;
+  padding: 14px 16px !important;
+  box-shadow: 0 2px 6px rgba(43, 33, 28, .18);
+}
+.markdown-rendered pre code { color: #eadbc8; background: transparent !important; }
+.markdown-rendered .copy-code-button { color: #b09c88; background: #3a2d26; }
+/* live preview / editor */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  background-color: #2b211c !important;
+  color: #eadbc8;
+}
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin { border-radius: 8px 8px 0 0; }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-end { border-radius: 0 0 8px 8px; }
+.markdown-source-view.mod-cm6 .code-block-flair { color: #b09c88; }
+
+/* código inline continua claro, só um destaque */
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code {
+  background-color: #e2d3b8 !important;
+  color: #7a3b1d !important;
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+}
