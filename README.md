@@ -1,6 +1,8 @@
 # 3D from scratch
 
 Um renderer 3D por software escrito em **C + SDL2**, do zero: sem OpenGL e sem GPU. Cada pixel é calculado na mão e escrito num color buffer.
+Feito acompanhando o curso [3D Computer Graphics Programming](https://pikuma.com/courses/learn-3d-computer-graphics-programming), da Pikuma.
+
 Junto vem uma **vault Obsidian** (`notes/`) com o que estou aprendendo pelo caminho, com fórmulas, código e widgets interativos.
 
 ## Renderer
